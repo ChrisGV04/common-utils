@@ -1,0 +1,42 @@
+{
+  "name": "@cgvweb/common-utils",
+  "version": "1.0.0",
+  "repository": "https://github.com/ChrisGV04/common-utils",
+  "license": "MIT",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "rimraf dist && tsup src/*.ts --format cjs,esm --dts --minify",
+    "lint": "biome lint ./src",
+    "release": "release-it && npm run build && npm publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.3",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@types/node": "^20.11.30",
+    "@types/slug": "^5.0.8",
+    "changelogen": "^0.5.5",
+    "release-it": "^17.1.1",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "just-clone": "^6.2.0",
+    "slug": "^9.0.0"
+  }
+}
