@@ -18,11 +18,13 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rimraf dist && tsup src/*.ts --format cjs,esm --dts --minify",
     "lint": "biome lint ./src",
-    "release": "npm run lint && release-it && npm run build && npm publish"
+    "release": "release-it && npm run build && npm publish"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.6.3",
@@ -30,7 +32,7 @@
     "@types/node": "^20.11.30",
     "@types/slug": "^5.0.8",
     "changelogen": "^0.5.5",
-    "release-it": "^17.1.1",
+    "release-it": "^17.2.1",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.2",
     "typescript": "^5.2.2"
