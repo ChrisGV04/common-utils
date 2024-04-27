@@ -22,7 +22,7 @@
   "scripts": {
     "build": "rimraf dist && tsup src/*.ts --format cjs,esm --dts --minify",
     "lint": "biome lint ./src",
-    "release": "release-it && npm run build && npm publish"
+    "release": "npm run lint && release-it && npm run build && npm publish"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.6.3",
